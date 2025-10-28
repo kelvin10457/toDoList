@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>to do list by the beast</title>
+</head>
+<body class="bg-slate-600 text-white">
+    <header class="container max-w-screen-lg mx-auto">
+        <div class="">
+            <h1 class="text-3xl font-bold flex justify-center items-center py-4">To Do List</h1>
+            <nav class="flex flex-col sm:flex-row">
+                <a class="flex justify-center items-center w-full py-2 font-bold hover:text-slate-600 hover:bg-slate-50 hover:outline-1 hover:outline-slate-600 transition-all duration-100" href="#">Home</a>
+                <a class="flex justify-center items-center w-full py-2 font-bold hover:text-slate-600 hover:bg-slate-50 hover:outline-1 hover:outline-slate-600 transition-all duration-100" href="https://github.com/kelvin10457/toDoList" target="_blank">About The Project</a>
+                <a class="flex justify-center items-center w-full py-2 font-bold hover:text-slate-600 hover:bg-slate-50 hover:outline-1 hover:outline-slate-600 transition-all duration-100" href="https://www.linkedin.com/in/kelvin-intriago-5279a2263/" target="_blank">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <p class="container max-w-screen-lg w-11/12 mx-auto text-2xl font-bold text-slate-950 my-5">Press the button for adding the tasks that you need!</p>
+    <main id="tasksContainer" class="h-96 max-w-screen-lg mx-auto">
+        <!--the tasks will go here-->
+    </main>
+
+
+    <!--modal-->
+    <div class="hidden cursor-pointer fixed z-20 left-0 top-0 w-full h-full bg-white/50 justify-center items-center" id="modal">
+        <div class="w-9/12 max-w-lg h-9/12 rounded-2xl p-6 mx-auto bg-slate-600 flex-col space-y-10 outline-2 outline-slate-950">
+
+            <input class="font-semibold rounded-xl bg-white text-slate-500 p-4 w-full outline-2 outline-slate-950" placeholder="Title of the Task" type="text" id="titleInput">
+            <textarea class="font-semibold rounded-xl bg-white text-slate-500 p-4 w-full max-h-32 min-h-32 outline-2 outline-slate-950 " placeholder="Description of the task" name="" id="descriptionInput"></textarea>
+
+
+            <div>
+
+                <label for="task-status" class="block text-sm mb-2 text-slate-50 font-bold">
+                    Task Status
+                </label>
+
+                <select id="taskStatus" name="task-status" class="font-semibold outline-2 outline-slate-950 block w-full py-2 px-3 border border-gray-300 bg-white text-slate-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <option value="none" class="text-slate-600 bg-yellow-50">Select Status</option>
+
+                    <option value="pending" class="text-yellow-600 bg-yellow-50">Pending</option>
+
+                    <option value="inProgress" class="text-blue-600 bg-blue-50" selected>In Progress</option>
+
+                    <option value="completed" class="text-green-600 bg-green-50">Completed</option>
+                </select>
+            </div>
+
+            <div class="flex justify-end gap-4 w-full">
+                <button class="font-semibold outline-2 outline-green-800 bg-green-500 px-6 py-2 rounded-xl cursor-pointer hover:bg-white hover:text-green-500 hover:outline-1 transition-all duration-300" id="saveButton">Save</button>
+                <button class="font-semibold outline-2 outline-red-800 bg-red-400 px-6 py-2 rounded-xl cursor-pointer hover:bg-white hover:text-red-500 hover:outline-1 transition-all duration-300" id="cancelButton">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <button class="pl-8 pr-5 py-3 font-bold bg-slate-50 text-slate-600 rounded-tl-full fixed z-10 right-0 bottom-0 cursor-pointer hover:px-20 transition-all duration-300 outline-2 outline-slate-950" id="buttonAddTask">Add task</button>
+
+    <script type="module" src="./src/js/index.js"></script>
+</body>
+</html>
